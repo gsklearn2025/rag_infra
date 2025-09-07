@@ -36,3 +36,11 @@ dev = [
     "testcontainers>=4.12.0",
     "types-sqlalchemy>=1.4.53.38",
 ]
+
+[tool.ruff]
+line-length = 130
+exclude = ["notebooks/**", ".venv/**"]
+src = ["src", "tests"]
+lint.select = [
+  "I",
+]
