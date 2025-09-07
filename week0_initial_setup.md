@@ -84,3 +84,6 @@ omit = [
     "src/mock_llm_server.py",
 ]
 testpaths = ["tests"] 
+
+#### Add .gitignore
+
