@@ -1,0 +1,7 @@
+[project]
+name = "rag-infra"
+version = "0.1.0"
+description = "This is an experiment project for RAG Infra build"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
