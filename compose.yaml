@@ -13,6 +13,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./airflow/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+      
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U rag_user -d rag_db && echo 'Postgres is ready!!!'"]
       interval: 5s
@@ -75,13 +76,13 @@ services:
     environment:
       # Core settings for Airflow 3.0 with SimpleAuth (default)
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://rag_user:rag_password@postgres:5432/rag_db
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://rag_user:rag_password@postgres:5432/airflow_db
       # Disable examples for simplicity
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
       # Set Airflow home to keep config files organized
       - AIRFLOW_HOME=/opt/airflow/home
       # Environment variables for DAG tasks
-      - POSTGRES_DATABASE_URL=postgresql+psycopg2://rag_user:rag_password@postgres:5432/rag_db
+      - POSTGRES_DATABASE_URL=postgresql+psycopg2://rag_user:rag_password@postgres:5432/airflow_db
       - OPENSEARCH_HOST=http://opensearch:9200
       - PYTHONPATH=/opt/airflow/src
     volumes:
@@ -133,7 +134,7 @@ volumes:
   airflow_logs:
   opensearch_data:
   ollama_data:
-  
+
 networks:
   rag-network:
     driver: bridge
