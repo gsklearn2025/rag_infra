@@ -1,3 +1,4 @@
 ## Documenting my steps for week0
-[week0 Initial Setup](./week0_initial_setup.md)
+- Do [week0 Initial Setup](docs/week0/01_initial_setup.md)
+- then config [week0 Pre-commit](docs/week0/02_pre_commit_config.md)
 
