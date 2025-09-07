@@ -1,8 +1,9 @@
 ### Services required
 - postgres
 - airflow
-- opensearch
-- opensearch-dashboards
+- opensearch: OpenSearch is an open-source search and analytics engine, 
+  originally derived from Elasticsearch. It is used to store, search, and analyze large volumes of data quickly and in near real-time. OpenSearch is commonly used for log analytics, full-text search, monitoring, and data visualization. It is often paired with OpenSearch Dashboards for visualizing and exploring data.
+- opensearch-dashboards: visualize your data, your way. 
 - ollama
 - our custom API
 
@@ -32,4 +33,13 @@ networks:
 ```bash
     docker compose up
 ```
+
+### Add Opensearch and opensearch dashboard
+- check http://localhost:5601/api/status 
+- 
+
+### Lets add airflow service
+- Define the service, volume in compose
+- once airflow container is initiliazed, look for logs for admin password
+- try localhost:8080 for airflow dashboard
 
