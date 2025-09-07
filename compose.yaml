@@ -111,10 +111,29 @@ services:
       "
     networks:
       - rag-network
+
+  ollama:
+    image: ollama/ollama:0.11.2
+    container_name: rag-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - rag-network
+
 volumes:
   postgres_data:
   airflow_logs:
   opensearch_data:
+  ollama_data:
+  
 networks:
   rag-network:
     driver: bridge

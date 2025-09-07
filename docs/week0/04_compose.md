@@ -36,7 +36,10 @@ networks:
 
 ### Add Opensearch and opensearch dashboard
 - check http://localhost:5601/api/status 
-- 
+- Visit databoard at localhost:5601
+
+### Add ollama
+- check http://localhost:11434
 
 ### Lets add airflow service
 - Define the service, volume in compose
