@@ -43,4 +43,4 @@
 
 - types-sqlalchemy: is a Python package that provides type stubs for SQLAlchemy. These stubs enable better type checking and autocompletion in editors and tools like mypy, even if SQLAlchemy itself does not include complete type annotations. This helps catch type errors and improves the development experience when working with SQLAlchemy.
 
--testcontainers is a Python library that allows you to run lightweight, throwaway Docker containers for testing purposes. It is commonly used to spin up databases, message brokers, or other services in containers during tests, ensuring a consistent and isolated test environment. This helps make integration and end-to-end tests more reliable and reproducible.
+- testcontainers is a Python library that allows you to run lightweight, throwaway Docker containers for testing purposes. It is commonly used to spin up databases, message brokers, or other services in containers during tests, ensuring a consistent and isolated test environment. This helps make integration and end-to-end tests more reliable and reproducible.
